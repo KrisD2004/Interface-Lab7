@@ -96,8 +96,7 @@
             public abstract void Fly();
         }
 
-        //Inherited classes are from lines 37-126. 
-        
+        //concrete classes lion and its derived from mammal
         public  class Lion : Mammal
         {
             //constructor 
@@ -147,6 +146,7 @@
 
         }
 
+        //concrete class eagle derived from Bird
         public class Eagle : Bird
         {
             public Eagle(string name)
@@ -169,6 +169,7 @@
             }
         }
 
+        //Snake is concrete and derived from Reptile
         public class Snake : Reptile
         {
             public Snake(string name)
@@ -192,6 +193,7 @@
 
         }
 
+        //Dolphin is concrete and its derived from mammal
         public class Dolphin : Mammal
         {
             public Dolphin(string name)
@@ -214,6 +216,7 @@
             }
         }
 
+        //Elephant is concrete and is derived from Mammal
         public class Elephant : Mammal
         {
             public Elephant(string name)
