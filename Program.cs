@@ -10,6 +10,7 @@
             lion.Eat();
             lion.Sound();
             lion.GiveBirth();
+            lion.Sleep();
             lion.Color = "Yellow";
             lion.Move();
             Console.WriteLine($"Lion's color: {lion.Color}");
@@ -77,7 +78,7 @@
             }
         }
 
-        //// Abstract class: Mammal
+        // Abstract class: Mammal
         public abstract class Mammal : Animal
         {
             public abstract void GiveBirth();
