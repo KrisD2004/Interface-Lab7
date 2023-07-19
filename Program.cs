@@ -52,193 +52,225 @@
 
         }
 
-        // This is the abstract class: Animal
-        public abstract class Animal
+
+    }
+
+    // This is the abstract class: Animal
+    public abstract class Animal
+    {
+        public string Name { get; set; }
+        public abstract void Eat();
+        public abstract void Sound();
+
+        public virtual void Sleep()
         {
-            public string Name { get; set; }
-            public abstract void Eat();
-            public abstract void Sound();
-
-            public virtual void Sleep()
-            {
-                Console.WriteLine("Animal is sleeping.");
-            }
-
-            public virtual void Move()
-            {
-                Console.WriteLine("Animal is moving!");
-            }
-
-            public virtual string Color { get; set; }
-
-            public virtual string Habitat
-            {
-                get { return "Unknown"; }
-                set { Console.WriteLine("Setting habitat of Animal"); }
-            }
+            Console.WriteLine("Animal is sleeping.");
         }
 
-        // Abstract class: Mammal
-        public abstract class Mammal : Animal
+        public virtual void Move()
         {
-            public abstract void GiveBirth();
+            Console.WriteLine("Animal is moving!");
         }
 
-        // Abstract class: Reptile
-        public abstract class Reptile : Animal
+        public virtual string Color { get; set; }
+
+        public virtual string Habitat
         {
-            public abstract void ShedSkin();
+            get { return "Unknown"; }
+            set { Console.WriteLine("Setting habitat of Animal"); }
+        }
+    }
+
+    // Abstract class: Mammal
+    public abstract class Mammal : Animal
+    {
+        public abstract void GiveBirth();
+    }
+
+    // Abstract class: Reptile
+    public abstract class Reptile : Animal
+    {
+        public abstract void ShedSkin();
+    }
+
+    // Abstract class: Reptile
+    public abstract class Bird : Animal
+    {
+        public abstract void Fly();
+    }
+
+    //concrete classes lion and its derived from mammal
+    public class Lion : Mammal
+    {
+        //constructor 
+        public Lion(string name)
+        {
+            Name = name;
         }
 
-        // Abstract class: Reptile
-        public abstract class Bird : Animal
+        public override void Eat()
         {
-            public abstract void Fly();
-        }
-
-        //concrete classes lion and its derived from mammal
-        public  class Lion : Mammal
-        {
-            //constructor 
-            public Lion(string name)
-            {
-                Name = name;
-            }
-
-            public override void Eat()
-            {
-                Console.WriteLine("Lion is eating meat.");
-
-            }
-
-            public override void Sound()
-            {
-                Console.WriteLine("Lion is roaring.");
-            }
-
-            public override void GiveBirth()
-            {
-                Console.WriteLine("Lion gives birth to cubs.");
-            }
-
-            public override void Sleep()
-            {
-                Console.WriteLine("Lion is sleeping.");
-            }
-
-            public override void Move()
-            {
-                Console.WriteLine("Lion is moving!");
-            }
-
-
-            public override string Color
-            {
-                get { return "Yellow"; }
-                set { Console.WriteLine("Setting color of Lion"); }
-            }
-
-            public override string Habitat
-            {
-                get { return "Grassland"; }
-                set { Console.WriteLine("Setting habitat of Lion"); }
-            }
+            Console.WriteLine("Lion is eating meat.");
 
         }
 
-        //concrete class eagle derived from Bird
-        public class Eagle : Bird
+        public override void Sound()
         {
-            public Eagle(string name)
-            {
-                Name = name;
-            }
-            public override void Eat()
-            {
-                Console.WriteLine("Eagle is eating fish.");
-            }
-
-            public override void Sound()
-            {
-                Console.WriteLine("Eagle is screeching.");
-            }
-
-            public override void Fly()
-            {
-                Console.WriteLine("Eagle is soaring in the sky.");
-            }
+            Console.WriteLine("Lion is roaring.");
         }
 
-        //Snake is concrete and derived from Reptile
-        public class Snake : Reptile
+        public override void GiveBirth()
         {
-            public Snake(string name)
-            {
-                Name = name;
-            }
-            public override void Eat()
-            {
-                Console.WriteLine("Snake is eating prey.");
-            }
-
-            public override void Sound()
-            {
-                Console.WriteLine("Snake hisses.");
-            }
-
-            public override void ShedSkin()
-            {
-                Console.WriteLine("Snake is shedding its skin.");
-            }
-
+            Console.WriteLine("Lion gives birth to cubs.");
         }
 
-        //Dolphin is concrete and its derived from mammal
-        public class Dolphin : Mammal
+        public override void Sleep()
         {
-            public Dolphin(string name)
-            {
-                Name = name;
-            }
-            public override void Eat()
-            {
-                Console.WriteLine("Dolphin is eating fish.");
-            }
-
-            public override void Sound()
-            {
-                Console.WriteLine("Dolphin is making clicking sounds.");
-            }
-
-            public override void GiveBirth()
-            {
-                Console.WriteLine("Dolphin gives birth to calves.");
-            }
+            Console.WriteLine("Lion is sleeping.");
         }
 
-        //Elephant is concrete and is derived from Mammal
-        public class Elephant : Mammal
+        public override void Move()
         {
-            public Elephant(string name)
-            {
-                Name = name;
-            }
-            public override void Eat()
-            {
-                Console.WriteLine("Elephant is eating leaves.");
-            }
+            Console.WriteLine("Lion is moving!");
+        }
 
-            public override void Sound()
-            {
-                Console.WriteLine("Elephant is trumpeting.");
-            }
 
-            public override void GiveBirth()
-            {
-                Console.WriteLine("Elephant gives birth to calves.");
-            }
+        public override string Color
+        {
+            get { return "Yellow"; }
+            set { Console.WriteLine("Setting color of Lion"); }
+        }
+
+        public override string Habitat
+        {
+            get { return "Grassland"; }
+            set { Console.WriteLine("Setting habitat of Lion"); }
+        }
+
+    }
+    //interface class for eagle and bat 
+    public interface IFlys
+    {
+        public int Wingspan { get; set; }
+        public void Fly()
+        {
+
+        }
+    }
+    //concrete class eagle derived from Bird
+    public class Eagle : Bird, IFlys
+    {
+        public int Wingspan { get; set; }
+        public Eagle(string name)
+        {
+            Name = name;
+        }
+        public override void Eat()
+        {
+            Console.WriteLine("Eagle is eating fish.");
+        }
+
+        public override void Sound()
+        {
+            Console.WriteLine("Eagle is screeching.");
+        }
+
+        public override void Fly()
+        {
+            Console.WriteLine("Eagle is soaring in the sky.");
+        }
+    }
+
+    //Snake is concrete and derived from Reptile
+    public class Snake : Reptile
+    {
+        public Snake(string name)
+        {
+            Name = name;
+        }
+        public override void Eat()
+        {
+            Console.WriteLine("Snake is eating prey.");
+        }
+
+        public override void Sound()
+        {
+            Console.WriteLine("Snake hisses.");
+        }
+
+        public override void ShedSkin()
+        {
+            Console.WriteLine("Snake is shedding its skin.");
+        }
+
+    }
+
+    //Dolphin is concrete and its derived from mammal
+    public class Dolphin : Mammal
+    {
+        public Dolphin(string name)
+        {
+            Name = name;
+        }
+        public override void Eat()
+        {
+            Console.WriteLine("Dolphin is eating fish.");
+        }
+
+        public override void Sound()
+        {
+            Console.WriteLine("Dolphin is making clicking sounds.");
+        }
+
+        public override void GiveBirth()
+        {
+            Console.WriteLine("Dolphin gives birth to calves.");
+        }
+    }
+
+
+    public class Bat : Mammal, IFlys
+    {
+        public int Wingspan { get; set; }
+        public override void Eat()
+        {
+            Console.WriteLine("Bat is eating leaves.");
+        }
+
+        public override void Sound()
+        {
+            Console.WriteLine("Bat is trumpeting.");
+        }
+
+        public override void GiveBirth()
+        {
+            Console.WriteLine("Bat gives birth to calves.");
         }
 
 
     }
+
+    //Elephant is concrete and is derived from Mammal
+    public class Elephant : Mammal
+    {
+        public Elephant(string name)
+        {
+            Name = name;
+        }
+        public override void Eat()
+        {
+            Console.WriteLine("Elephant is eating leaves.");
+        }
+
+        public override void Sound()
+        {
+            Console.WriteLine("Elephant is trumpeting.");
+        }
+
+        public override void GiveBirth()
+        {
+            Console.WriteLine("Elephant gives birth to calves.");
+        }
+    }
+
 }
