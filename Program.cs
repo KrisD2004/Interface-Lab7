@@ -46,8 +46,13 @@
             elephant.Eat();
             elephant.Sound();
             elephant.GiveBirth();
-           /* elephant.Color="Blue";
-            Console.WriteLine($"Elephant's color: {elephant.Color}");*/
+            /* elephant.Color="Blue";
+             Console.WriteLine($"Elephant's color: {elephant.Color}");*/
+
+            Bat bat = new Bat("Bruce");
+            bat.Eat();
+            bat.Sound();
+            bat.GiveBirth();
 
 
         }
@@ -232,6 +237,11 @@
     public class Bat : Mammal, IFlys
     {
         public int Wingspan { get; set; }
+
+        public Bat(string name)
+        {
+            Name = name;
+        }
         public override void Eat()
         {
             Console.WriteLine("Bat is eating leaves.");
@@ -259,17 +269,17 @@
         }
         public override void Eat()
         {
-            Console.WriteLine("Elephant is eating leaves.");
+            Console.WriteLine("Bat is eating bugs.");
         }
 
         public override void Sound()
         {
-            Console.WriteLine("Elephant is trumpeting.");
+            Console.WriteLine("Bat is using echoloaction");
         }
 
         public override void GiveBirth()
         {
-            Console.WriteLine("Elephant gives birth to calves.");
+            Console.WriteLine("Bat gave birth to pups.");
         }
     }
 
