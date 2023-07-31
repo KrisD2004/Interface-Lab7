@@ -30,29 +30,31 @@
             snake.Eat();
             snake.Sound();
             snake.ShedSkin();
-           /* snake.Color = "red";
-            Console.WriteLine($"Snake's color: {snake.Color}");*/
+            snake.Color = "red";
+            Console.WriteLine($"Snake's color: {snake.Color}");
 
 
             Dolphin dolphin = new Dolphin("Finny");
             dolphin.Eat();
             dolphin.Sound();
             dolphin.GiveBirth();
-           /* dolphin.Color = "Gray";
-            Console.WriteLine($"Dolphin's color: {dolphin.Color}");*/
+           dolphin.Color = "Gray";
+            Console.WriteLine($"Dolphin's color: {dolphin.Color}");
 
 
             Elephant elephant = new Elephant("Trump");
             elephant.Eat();
             elephant.Sound();
             elephant.GiveBirth();
-            /* elephant.Color="Blue";
-             Console.WriteLine($"Elephant's color: {elephant.Color}");*/
+            elephant.Color="Blue";
+             Console.WriteLine($"Elephant's color: {elephant.Color}");
 
             Bat bat = new Bat("Bruce");
             bat.Eat();
             bat.Sound();
             bat.GiveBirth();
+            bat.Color = "brown-greyish";
+            Console.WriteLine($"Bat's color: {bat.Color}");
 
 
         }
